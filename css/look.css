@@ -34,3 +34,39 @@ body {
   color: #4d4d4d;
   margin-bottom: 10px;
 }
+
+.confirmation-page input[type="text"],
+.confirmation-page input[type="email"],
+.confirmation-page input[type="tel"],
+.confirmation-page textarea,
+.confirmation-page select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #e6d8c8;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.confirmation-page select {
+  appearance: none;
+  background-image: url("down-arrow.png");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 30px;
+}
+
+.confirmation-page button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #e6d8c8;
+  color: #333333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirmation-page button[type="submit"]:hover {
+  background-color: #d1c0b0;
+}
