@@ -97,9 +97,6 @@
           <option value="other">Other</option>
         </select>
       </div>
-    
-      
-      
       <div class="form-group">
         <label for="age-group">Age Group *</label>
         <select id="age-group" name="age-group" required>
@@ -118,12 +115,10 @@
         <label for="church-denomination">What Church DO you attend?</label>
         <input type="text" id="church-denomination" name="church-denomination">
       </div>
-     
       <div class="form-group">
         <label for="expectations">What are your expectations for this year's Teens Pray?</label>
         <textarea id="expectations" name="expectations"></textarea>
       </div>
-      
       <div class="form-group">
         <label for="bus-service">Do you plan to take advantage of the free bus service To and Fro Teens Pray?</label>
         <select id="bus-service" name="bus-service" onchange="showBusStations(this.value)">
@@ -146,6 +141,16 @@
         </div>
       </div>
       <div class="form-group">
+        <label for="publicity-team">Would you like to be a part of the Teens Pray publicity team?</label>
+        <select id="publicity-team" name="publicity-team">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+        <div id="publicity-link" style="display: none;">
+          <p>Click <a href="https://chat.whatsapp.com/CzCrX8ohRzXGzEU3uINqn3">here</a> to join the publicity team.</p>
+        </div>
+      </div>
+      <div class="form-group">
         <button type="submit" class="form-submit">Register</button>
       </div>
     </form>
@@ -159,6 +164,191 @@
         busStations.style.display = "none";
       }
     }
+    document.getElementById("publicity-team").addEventListener("change", function() {
+      var publicityLink = document.getElementById("publicity-link");
+      if (this.value === "yes") {
+        publicityLink.style.display = "block";
+      } else {
+        publicityLink.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teens Pray Registration</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Mobile Responsive Styles */
+    @media (max-width: 767px) {
+      .header {
+        flex-direction: column;
+        align-items: center;
+      }
+      .logo {
+        margin-bottom: 10px;
+      }
+      .buttons {
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .buttons button {
+        margin-left: 10px;
+      }
+      .container {
+        padding: 10px;
+      }
+      .form-group label {
+        font-size: 16px;
+      }
+      .form-group input,
+      .form-group select {
+        font-size: 14px;
+      }
+      .form-group textarea {
+        font-size: 14px;
+        height: 100px;
+      }
+      .form-submit {
+        font-size: 16px;
+        padding: 10px 20px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="TP Logo - White.png" alt="Teens Pray Logo">
+    </div>
+    <div class="buttons">
+      <button class="beta">Beta</button>
+      <button class="register">Register</button>
+      <button class="checkin">Check-In</button>
+    </div>
+  </div>
+  <div class="container">
+    <h2>Add New Member</h2>
+    <p>Fill out the information below</p>
+    <form id="registration-form" action="process_registration.php" method="POST">
+      <div class="form-group">
+        <label for="first-name">First Name *</label>
+        <input type="text" id="first-name" name="first-name" required>
+      </div>
+      <div class="form-group">
+        <label for="last-name">Last Name *</label>
+        <input type="text" id="last-name" name="last-name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      <div class="form-group">
+        <label for="address">Home Address *</label>
+        <input type="text" id="address" name="address" required>
+      </div>
+      <div class="form-group">
+        <label for="city">City *</label>
+        <input type="text" id="city" name="city" required>
+      </div>
+      <div class="form-group">
+        <label for="state">State *</label>
+        <input type="text" id="state" name="state" required>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender *</label>
+        <select id="gender" name="gender" required>
+          <option value="">--Select--</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="age-group">Age Group *</label>
+        <select id="age-group" name="age-group" required>
+          <option value="">--Select--</option>
+          <option value="13-18">13-18</option>
+          <option value="19-25">19-25</option>
+          <option value="26-35">26-35</option>
+          <option value="36+">36+</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="how-heard">How did you hear of Teens Pray?</label>
+        <input type="text" id="how-heard" name="how-heard">
+      </div>
+      <div class="form-group">
+        <label for="church-denomination">What Church DO you attend?</label>
+        <input type="text" id="church-denomination" name="church-denomination">
+      </div>
+      <div class="form-group">
+        <label for="expectations">What are your expectations for this year's Teens Pray?</label>
+        <textarea id="expectations" name="expectations"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="bus-service">Do you plan to take advantage of the free bus service To and Fro Teens Pray?</label>
+        <select id="bus-service" name="bus-service" onchange="showBusStations(this.value)">
+          <option value="">--Select--</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+      <div id="bus-stations" style="display: none;">
+        <div class="form-group">
+          <label for="bus-station">Which of these bus stations is closest to you?</label>
+          <select id="bus-station" name="bus-station">
+            <option value="">--Select--</option>
+            <option value="Ikeja Underbridge">Ikeja Underbridge</option>
+            <option value="Yaba Phase 1">Yaba Phase 1</option>
+            <option value="Berger BRT Station">Berger BRT Station</option>
+            <option value="Ogba bus stop">Ogba bus stop</option>
+            <option value="Others">Others...</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="publicity-team">Would you like to be a part of the Teens Pray publicity team?</label>
+        <select id="publicity-team" name="publicity-team">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+        <div id="publicity-link" style="display: none;">
+          <p>Click <a href="https://chat.whatsapp.com/CzCrX8ohRzXGzEU3uINqn3">here</a> to join the publicity team.</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="form-submit">Register</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    function showBusStations(value) {
+      var busStations = document.getElementById("bus-stations");
+      if (value === "yes") {
+        busStations.style.display = "block";
+      } else {
+        busStations.style.display = "none";
+      }
+    }
+    document.getElementById("publicity-team").addEventListener("change", function() {
+      var publicityLink = document.getElementById("publicity-link");
+      if (this.value === "yes") {
+        publicityLink.style.display = "block";
+      } else {
+        publicityLink.style.display = "none";
+      }
+    });
   </script>
 </body>
 </html>
