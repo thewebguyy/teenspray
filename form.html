@@ -114,7 +114,7 @@
       </div>
       <div class="form-group">
         <label for="bus-service">Do you plan to take advantage of the free bus services To and Fro Teens Pray?</label>
-        <select id="bus-service" name="bus-service" onchange="showBusStations(this.value)">
+        <select id="bus-service" name="bus-service" onchange="showTextBox(this.value)">
           <option value="">--Select--</option>
           <option value="yes">Yes</option>
           <option value="no">No</option>
@@ -131,6 +131,12 @@
             <option value="Ogba bus stop">Ogba bus stop</option>
             <option value="Others">Others...</option>
           </select>
+        </div>
+        <div id="bus-station-other" style="display: none;">
+          <div class="form-group">
+            <label for="bus-station-text">Please specify the bus station:</label>
+            <input type="text" id="bus-station-text" name="bus-station-text">
+          </div>
         </div>
       </div>
       <div class="form-group">
@@ -149,12 +155,12 @@
     </form>
   </div>
   <script>
-    function showBusStations(value) {
-      var busStations = document.getElementById("bus-stations");
-      if (value === "yes") {
-        busStations.style.display = "block";
+    function showTextBox(value) {
+      var busStationOther = document.getElementById("bus-station-other");
+      if (value === "Others") {
+        busStationOther.style.display = "block";
       } else {
-        busStations.style.display = "none";
+        busStationOther.style.display = "none";
       }
     }
   </script>
