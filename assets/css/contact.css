@@ -1,5 +1,5 @@
 body {
-  background-color: #f3f3f3;
+  background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,8 +8,8 @@ body {
 }
 
 .container {
-  background-color: #fff;
-  color: #333;
+  background-color: #000;
+  color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
@@ -36,9 +36,11 @@ input[type="text"],
 textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #4CAF50;
   border-radius: 4px;
   resize: vertical;
+  color: #fff;
+  background-color: #000;
 }
 
 .submit-button {
@@ -62,7 +64,7 @@ textarea {
 .contact-info {
   text-align: center;
   margin-top: 20px;
-  color: #555;
+  color: #fff;
 }
 
 .contact-info i {
@@ -88,7 +90,7 @@ textarea {
 }
 
 .social-icons a {
-  color: #555;
+  color: #fff;
   text-decoration: none;
   font-size: 24px;
   transition: color 0.3s ease;
