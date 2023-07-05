@@ -872,6 +872,19 @@ section {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+.buy-button {
+  background-color: #FF0000;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+
+
 .portfolio #portfolio-flters {
   padding: 0;
   margin: 0 auto 25px auto;
